@@ -25,3 +25,10 @@ jobs:
           image_name: 'hello-python'
       - name: Test installation
         run: echo $(s2i version)
+      - name: Lucas Test Push To Quay Action
+        uses: lstocchi/push-to-quay-action@0.0.2
+        with:
+          image-to-push: 'hello-world'
+          quay-registry: ${{ secrets.QUAY_REPO }}
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_PASSWORD }}
