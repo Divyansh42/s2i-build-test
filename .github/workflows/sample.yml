@@ -16,14 +16,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         env:
-          DEFAULT_BRANCH: test-action
+          DEFAULT_BRANCH: main
       - name: Install and Test s2i
         uses: ./
         with:
           path_context: 'https://github.com/sclorg/django-ex'
           builder_image: 'centos/python-35-centos7'
           image_name: 'hello-python'
-      - name: Test installation
+      - name: Test s2i installation
         run: echo $(s2i version)
       # - name: Lucas Test Push To Quay Action
       #   uses: lstocchi/push-to-quay-action@0.0.2
