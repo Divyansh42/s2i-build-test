@@ -12,7 +12,6 @@ import {
     getReason
   } from './utils/execHelper';
 export async function run(): Promise<void> {
-    const version = core.getInput('version');
     const builderImage = core.getInput('builder_image');
     const imageName = core.getInput('image_name');
     const imageTag = core.getInput('image_tag');
@@ -20,6 +19,7 @@ export async function run(): Promise<void> {
     const logLevel = core.getInput('log_level');
     const runnerOS = process.env.RUNNER_OS;
   
+    const version = 'v1.3.1';
     core.debug(version);
     core.debug(runnerOS);
     core.debug(process.env.RUNNER_TEMP);
