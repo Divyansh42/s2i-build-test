@@ -14,8 +14,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         env:
-          DEFAULT_BRANCH: modify-structure
-      - name: Install s2i
+          DEFAULT_BRANCH: main
+      - name: Install and Test s2i
         uses: ./
         with:
           path_context: 'https://github.com/sclorg/django-ex'
